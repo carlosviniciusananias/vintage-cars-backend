@@ -1,0 +1,23 @@
+{
+  "name": "vintage-cars",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/carlosviniciusananias/vintage-cars.git",
+  "author": "Carlos Vinicius <carlos.oliveira69@fatec.sp.gov.br>",
+  "license": "MIT",
+  "scripts": {
+    "build": "rimraf ./build && tsc",
+    "start": "npm run build && node build/server.js"
+  },
+  "dependencies": {
+    "@types/node": "^18.15.10",
+    "express": "^4.18.2",
+    "readme-md-generator": "^1.0.0",
+    "rimraf": "^4.4.1",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.0.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  }
+}
