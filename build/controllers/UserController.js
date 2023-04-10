@@ -35,14 +35,18 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
-var User = require("../models/User");
-module.exports = {
-    index: function (req, res) {
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var User_1 = __importDefault(require("../models/User"));
+var UserController = {
+    userList: function (req, res) {
         return __awaiter(this, void 0, void 0, function () {
             var users;
             return __generator(this, function (_a) {
                 switch (_a.label) {
-                    case 0: return [4 /*yield*/, User.find()];
+                    case 0: return [4 /*yield*/, User_1.default.find()];
                     case 1:
                         users = _a.sent();
                         res.json(users);
@@ -64,7 +68,7 @@ module.exports = {
                             user_address: user_address,
                             user_password: user_password,
                         };
-                        return [4 /*yield*/, User.create(data)];
+                        return [4 /*yield*/, User_1.default.create(data)];
                     case 1:
                         users = _b.sent();
                         return [2 /*return*/, res.json(users)];
@@ -73,3 +77,4 @@ module.exports = {
         });
     },
 };
+exports.default = UserController;

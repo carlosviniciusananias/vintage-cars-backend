@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 require("dotenv").config();
 
-function database() {
+const Database = () => {
   try {
     mongoose.connect(process.env.BASE_URL || "");
 
@@ -9,6 +9,6 @@ function database() {
   } catch (error) {
     console.error("Database connect error", error);
   }
-}
+};
 
-module.exports = database;
+export default Database;

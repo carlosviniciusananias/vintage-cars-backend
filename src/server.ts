@@ -1,19 +1,18 @@
-const express = require("express");
-const cookieParser = require("cookie-parser");
-const cors = require("cors");
-const path = require("path");
+import express from "express";
+import Routes from "./routes/routes";
+import Database from "./database/database";
 
-const database = require("./database/database")
-const routes = require("./routes/routes");
+const cors = require("cors");
+const cookieParser = require("cookie-parser");
 
 const app = express();
 
 app.use(cors());
 app.use(cookieParser());
 app.use(express.json());
-app.use(routes);
+app.use(Routes);
 
-database();
+Database();
 
 app.listen(3003, function () {
   console.log("server started");

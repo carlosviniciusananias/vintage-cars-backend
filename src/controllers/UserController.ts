@@ -1,7 +1,7 @@
-const User = require("../models/User");
+import User from "../models/User";
 
-module.exports = {
-  async index(req: any, res: any) {
+const UserController = {
+  async userList(req: any, res: any) {
     const users = await User.find();
     res.json(users);
   },
@@ -21,3 +21,5 @@ module.exports = {
     return res.json(users);
   },
 };
+
+export default UserController;
